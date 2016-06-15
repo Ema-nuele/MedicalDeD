@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+	
+<head>
+
+	<!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"> </link>
+
+    
+    <link href="css/modern-business.css" rel="stylesheet"> </link>
+
+    
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">  </link>
+    
+    <title>Medical D&amp;D</title>
+    
+    <f:verbatim>
+ 	<script type="text/javascript">
+  
+	function WebDate() 
+	{
+		var data = new Date();
+		  var gg, mm, aaaa;
+		  gg = data.getDate() + "/";
+		  mm = data.getMonth() + 1 + "/";
+		  aaaa = data.getFullYear();
+		  document.write("Oggi è il " + gg + mm + aaaa);
+	}
+ 
+	</script>
+ 	</f:verbatim>    
+    
+</head>
+
+<body>
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="MedicalDeD.xhtml"><font color="1f62a1">Medical DeD</font></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   <li>
+                	<a href="login.xhtml"><font color="1f62a1"> Login</font> <img src="immagini/login.jpg" width="20" height="20" alt="login"></img></a>
+                    </li>
+                 	<li>
+                   	<a href="consultaOfferta.xhtml"><font color="1f62a1">Consulta Offerta </font></a>
+                   	</li>
+                    <li>
+               		<a href="contacts.html"><font color="1f62a1">Contacts</font></a>
+                    </li>
+                    <li>
+                    <a href="#">
+                    	<script type="text/javascript">
+                    		WebDate(); 
+                    	</script>
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <!-- Page Content -->
+    <div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><font color="1f62a1">Contacts</font></h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Contacts</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.712019456849!2d12.466947214697875!3d41.85602497477568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13258a93dee902b1%3A0x14fd2f964414ebde!2sVia+della+Vasca+Navale%2C+79%2C+00146+Roma!5e0!3m2!1sit!2sit!4v1463128725649" width="600" height="450"  style="border:0" ></iframe>
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+            
+                <h3><font color="1f62a1">Contacts Details </font></h3>
+                <p><font color="1f62a1">Via della Vasca Navale 79 </font></p>
+                <p><font color="1f62a1">00146 Roma (Rm), Italia</font><br></br></p>
+                <p><font color="1f62a1">Telefono: 0679852143 </font></p>
+                <p><font color="1f62a1">Email: info@medicalD&amp;D.com </font></p>
+                <p><font color="1f62a1">Orari: Lunedi - Venerdi 7:00 - 19:00</font></p>
+                
+            </div>
+        </div>
+        <!-- /.row -->
+</div>
+
+
+</body>
+</html>

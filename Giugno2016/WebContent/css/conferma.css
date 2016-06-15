@@ -1,0 +1,45 @@
+@CHARSET "ISO-8859-1";
+
+
+
+.conferma {
+	-moz-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con mozilla */
+	-webkit-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con safari */
+	box-shadow: inset 0px 0px 0px 0px #fff6af; /*compatibilità con opera broswer */
+	-moz-border-radius: 31px;
+	-webkit-border-radius: 31px;
+	text-align:center;
+	color: #1f62a1;
+	text-shadow: 1px 1px 0px #ffffff; /* ombreggiatura testo */
+	
+	
+	
+}
+
+
+input,textarea {
+	text-align:center;
+	background: #FFFFFF;
+	border: 1px solid #1f62a1; /* Spessore del bordo */
+	color: #1f62a1; /* Colore del testo nella text area */
+	height: 30px; /* Altezza */
+	line-height: 30px; /* Altezza riga */
+	width: 200px; /* Larghezza */
+	padding: 0 10px;
+	background: #ffffff; /* Sfondo del padding */
+	
+	
+}
+
+button,textarea { /* Stili per il campo di testo e per la textarea */
+	color: #000000;
+	text-align: center;
+	background : #E4E4E4; /* Colore di sfondo */
+	border: 1px solid #323232; /* Bordo */
+	color: #fff; /* Colore del testo */
+	height: 30px; /* Altezza */
+	line-height: 30px; /* Altezza di riga */
+	width: 600px; /* Larghezza */
+	padding: 0 10px;
+	background: #E4E4E4; /* Padding */
+}

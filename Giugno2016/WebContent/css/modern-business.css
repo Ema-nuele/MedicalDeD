@@ -1,0 +1,210 @@
+/*!
+ * Start Bootstrap - Modern Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+.classname {
+	-moz-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con mozilla */
+	-webkit-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con safari */
+	box-shadow: inset 0px 0px 0px 0px #fff6af; /*compatibilità con opera broswer */
+	
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64',
+		endColorstr='#ffab23');
+	-moz-border-radius: 31px;
+	-webkit-border-radius: 31px;
+	display: inline-block;
+	text-align:center;
+	border: 1px solid #1f62a1;
+	-moz-border-radius: 31px;
+	-webkit-border-radius: 31px;
+	color: #1f62a1;
+	font-family: Comic Sans MS;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 7px 22px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0px #ffffff;
+	
+}
+
+.offerta{
+		-moz-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con mozilla */
+	-webkit-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con safari */
+	box-shadow: inset 0px 0px 0px 0px #fff6af; /*compatibilità con opera broswer */
+	
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64',
+		endColorstr='#ffab23');
+	-moz-border-radius: 31px;
+	-webkit-border-radius: 31px;
+	display: inline-block;
+	text-align:center;
+	border: 1px solid #1f62a1;
+	-moz-border-radius: 31px;
+	-webkit-border-radius: 31px;
+	color: #1f62a1;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 7px 22px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0px #ffffff;
+}
+.esami{
+		-moz-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con mozilla */
+	-webkit-box-shadow: inset 0px 0px 0px 0px #fff6af; /* compatibilità con safari */
+	box-shadow: inset 0px 0px 0px 0px #fff6af; /*compatibilità con opera broswer */
+	
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64',
+		endColorstr='#ffab23');
+	-moz-border-radius: 31px;
+	-webkit-border-radius: 31px;
+	display: inline-block;
+	text-align:center;
+	border: 1px solid #1f62a1;
+	-moz-border-radius: 31px;
+	-webkit-border-radius: 31px;
+	color: #787979;
+	font-family: Comic Sans MS;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 7px 22px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0px #ffffff;
+}
+
+
+
+
+
+body {
+    height: 100%;
+	
+}
+
+body {
+    padding-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.img-portfolio {
+    margin-bottom: 30px;
+}
+
+.img-hover:hover {
+    opacity: 0.8;
+}
+
+/* Home Page Carousel */
+
+header.carousel {
+    height: 50%;
+}
+
+header.carousel .item,
+header.carousel .item.active,
+header.carousel .carousel-inner {
+    height: 100%;
+}
+
+header.carousel .fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+input,textarea {
+	text-align:center;
+	background: #FFFFFF;
+	border: 1px solid #1f62a1; /* Spessore del bordo */
+	color: #1f62a1; /* Colore del testo nella text area */
+	height: 30px; /* Altezza */
+	line-height: 30px; /* Altezza riga */
+	width: 200px; /* Larghezza */
+	padding: 0 10px;
+	background: #ffffff; /* Sfondo del padding */
+	
+	
+}
+
+button,textarea { /* Stili per il campo di testo e per la textarea */
+	color: #000000;
+	text-align: center;
+	background : #E4E4E4; /* Colore di sfondo */
+	border: 1px solid #1f62a1; /* Bordo */
+	color: #1f62a1; /* Colore del testo */
+	height: 200px; /* Altezza */
+	line-height: 30px; /* Altezza di riga */
+	width: 200px; /* Larghezza */
+	padding: 0 10px;
+	background: #ffffff; /* Padding */
+}
+/* SLIDE ONE */
+.slideOne {
+	width: 50px;
+	height: 10px;
+	background: #333;
+	margin: 20px auto;
+
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	position: relative;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,0.2);
+}
+
+
+
+
+
+/* Pricing Page Styles */
+
+.price {
+    display: block;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.price sup {
+    top: -20px;
+    left: 2px;
+    font-size: 20px;
+}
+
+.period {
+    display: block;
+    font-style: italic;
+}
+
+/* Footer Styles */
+
+footer {
+    margin: 50px 0;
+}
+
+/* Responsive Styles */
+
+@media(max-width:991px) {
+    .customer-img,
+    .img-related {
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width:767px) {
+    .img-portfolio {
+        margin-bottom: 15px;
+    }
+
+    header.carousel .carousel {
+        height: 70%;
+    }
+}

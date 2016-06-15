@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	
+<head>
+	
+	<!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+
+    <link href="css/modern-business.css" rel="stylesheet"></link>
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+	
+	<title>Medical D&amp;D</title>
+	
+	<f:verbatim>
+ 
+ 	<script type="text/javascript">
+  
+	function WebDate() 
+	{
+		var data = new Date();
+		  var gg, mm, aaaa;
+		  gg = data.getDate() + "/";
+		  mm = data.getMonth() + 1 + "/";
+		  aaaa = data.getFullYear();
+		  document.write("Oggi è il " + gg + mm + aaaa);
+	}
+ 
+ 	</script>
+ 	</f:verbatim>    
+	
+	
+</head>
+	
+<body background="immagini/sfondo.png">
+<c:if test="#{controllerLogin.amministratore.id == null}">
+	<strong> <font color="red" size="7"> DEVI EFFETTUARE IL LOGIN </font></strong>
+</c:if>
+
+<c:if test="#{controllerLogin.amministratore.id != null}">
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <font color="1f62a1">
+                <br/>
+                <h:form>
+                <h:commandLink value="MedicalD&amp;D" action="#{controllerLogin.home}"/>
+                </h:form>
+                </font>
+            </div>
+            
+       
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                <li>
+                <br/>
+                <font color="1f62a1">Pannello di Amministrazione</font> &nbsp; &nbsp;
+                </li>
+           	    
+           	    <li>
+                <br/>
+                <font color="1f62a1">Login:</font><font color="red">${controllerLogin.amministratore.username}</font>&nbsp;&nbsp;&nbsp; 
+                </li>
+                
+                <li>
+                <br/>
+                <font color="1f62a1">
+                <h:form>  
+                	<h:commandLink value="Logout" action="#{controllerLogin.logout}" />  
+                </h:form> 
+                </font>
+                </li>
+                    
+                <li>
+                <br/>
+                <h:form>
+                   <h:commandLink/>
+                   &nbsp; &nbsp;
+                   <font color="1f62a1">
+                   	<script type="text/javascript">
+                    	WebDate(); 
+                    </script>
+                   </font> 
+                </h:form>
+                </li>
+                </ul>
+            </div>
+        <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <h1 align="center">
+	<font color="1f62a1">
+		Medico inserito con successo 
+	</font>
+	</h1>
+		 
+	<br/>
+	
+	<a href="amministrazione.xhtml" class="classname">
+			Torna alla pagina di amministrazione
+	</a>
+	<br/>
+	
+</c:if>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<head>
+
+	<!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+
+    <link href="css/modern-business.css" rel="stylesheet"></link>
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"></link>
+    
+    <title>Medical D&amp;D</title>
+    
+    <f:verbatim>
+ 
+ 	<script type="text/javascript">
+  
+	function WebDate() 
+	{
+		var data = new Date();
+		  var gg, mm, aaaa;
+		  gg = data.getDate() + "/";
+		  mm = data.getMonth() + 1 + "/";
+		  aaaa = data.getFullYear();
+		  document.write("Oggi è il " + gg + mm + aaaa);
+	}
+ 
+ 	</script>
+ 	</f:verbatim>    
+     
+</head>
+	
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="MedicalDeD.xhtml;"> <font color="1f62a1">Medical D&amp;D   </font></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+            
+                   <li>
+                   <a href="login.xhtml"><font color="1f62a1">Login </font><img src="immagini/login.jpg" width="20" height="20"></img></a>
+                   </li>
+                    	
+                   <li>
+                   <a href="contacts.xhtml"><font color="1f62a1">Contacts</font></a>
+                    </li>
+                   
+                   <li>
+                   <a href="#">
+                   	<script type="text/javascript">
+                    	WebDate(); 
+                    </script>
+                   </a>
+                   </li>
+               	   </ul>
+            </div>
+        <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    
+    <f:view>
+     <!-- Page Content -->
+    <img src="immagini/bannerOfferta.jpg" width="1160" height="400" />
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+        </div>
+        
+    	<br/>
+   		<h:form>
+   		<legend><font color="1f62a1">Seleziona una tipologia di esame dall'elenco</font></legend>
+   		<font color="red">Seleziona la tipologia dal menù ed inseriscila a mano</font>
+   		
+   		<p>
+      	<font color="1f62a1">
+   		<select id="tipologia" name="tipologia">
+    	<option value="seleziona">Seleziona Tipologia Esame</option>
+    		<ui:repeat var="x" value="#{controllerOfferta.tipologie}">
+    		<option value="${x}">${x.nomeTipologia}</option>
+ 			</ui:repeat>
+   		<h:inputText value="#{controllerOfferta.sceltaT}" />
+   		</select>
+  		</font>
+		</p>   
+   		
+   		<br/>
+   		
+   		<h:commandButton value="CONFERMA" action="#{controllerOfferta.vaiADescrzione}" />
+   
+   		</h:form>
+    
+		<br/>	
+	
+	<p align="center">
+		<a href="MedicalDeD.xhtml" class="classname">Torna alla pagina principale</a>
+	</p>
+	
+	<!-- Footer -->
+	<footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p> <font color="1f62a1">Copyright &copy; Medical D&amp;D Industries 2016 - All Rights Reserved</font></p>
+                	<p><font color="1f62a1">Medical D&amp;D  Indutries</font></p> 
+ 					<p><font color="1f62a1">Via della Vasca Navale 79 - 00146 Roma</font></p>
+ 					<p><font color="1f62a1">0679852143 - info@medicalD&D;.com</font></p>
+ 					
+                </div>
+            </div>
+     </footer>
+     </f:view>
+        
+</body>
+</html>
