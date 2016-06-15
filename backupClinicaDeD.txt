@@ -1,0 +1,182 @@
+PGDMP         "                t        
+   ClinicaDeD    9.4.6    9.4.6 3    "           0    0    ENCODING    ENCODING        SET client_encoding = 'UTF8';
+                       false            #           0    0 
+   STDSTRINGS 
+   STDSTRINGS     (   SET standard_conforming_strings = 'on';
+                       false            $           1262    42914 
+   ClinicaDeD    DATABASE     å   CREATE DATABASE "ClinicaDeD" WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'Italian_Italy.1252' LC_CTYPE = 'Italian_Italy.1252';
+    DROP DATABASE "ClinicaDeD";
+             postgres    false                        2615    2200    public    SCHEMA        CREATE SCHEMA public;
+    DROP SCHEMA public;
+             postgres    false            %           0    0    SCHEMA public    COMMENT     6   COMMENT ON SCHEMA public IS 'standard public schema';
+                  postgres    false    6            &           0    0    public    ACL     ¢   REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+                  postgres    false    6                        3079    11855    plpgsql 	   EXTENSION     ?   CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+    DROP EXTENSION plpgsql;
+                  false            '           0    0    EXTENSION plpgsql    COMMENT     @   COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+                       false    1            ≠            1259    42915    amministratore    TABLE     E  CREATE TABLE amministratore (
+    id bigint NOT NULL,
+    cognome character varying(255) NOT NULL,
+    email character varying(255) NOT NULL,
+    indirizzo character varying(255) NOT NULL,
+    nome character varying(255) NOT NULL,
+    password character varying(255) NOT NULL,
+    username character varying(255) NOT NULL
+);
+ "   DROP TABLE public.amministratore;
+       public         postgres    false    6            Æ            1259    42923    esame    TABLE     ¸   CREATE TABLE esame (
+    id bigint NOT NULL,
+    datacreazione timestamp without time zone,
+    dataesame timestamp without time zone NOT NULL,
+    medico_id bigint,
+    paziente_idpaziente bigint,
+    tipologia_nometipologia character varying(255)
+);
+    DROP TABLE public.esame;
+       public         postgres    false    6            Ø            1259    42928    esame_risultato    TABLE     O   CREATE TABLE esame_risultato (
+    esame_id bigint,
+    risultati_id bigint
+);
+ #   DROP TABLE public.esame_risultato;
+       public         postgres    false    6            ∞            1259    42931 
+   indicatore    TABLE     F   CREATE TABLE indicatore (
+    nome character varying(255) NOT NULL
+);
+    DROP TABLE public.indicatore;
+       public         postgres    false    6            ±            1259    42936    medico    TABLE     ¥   CREATE TABLE medico (
+    id bigint NOT NULL,
+    cognome character varying(255) NOT NULL,
+    nome character varying(255) NOT NULL,
+    specializzazione character varying(255)
+);
+    DROP TABLE public.medico;
+       public         postgres    false    6            ≤            1259    42944    openjpa_sequence_table    TABLE     ]   CREATE TABLE openjpa_sequence_table (
+    id smallint NOT NULL,
+    sequence_value bigint
+);
+ *   DROP TABLE public.openjpa_sequence_table;
+       public         postgres    false    6            ≥            1259    42949    paziente    TABLE     ¿   CREATE TABLE paziente (
+    idpaziente bigint NOT NULL,
+    cognome character varying(255) NOT NULL,
+    indirizzo character varying(255) NOT NULL,
+    nome character varying(255) NOT NULL
+);
+    DROP TABLE public.paziente;
+       public         postgres    false    6            ¥            1259    42957    prerequisito    TABLE     t   CREATE TABLE prerequisito (
+    nome character varying(255) NOT NULL,
+    valore character varying(255) NOT NULL
+);
+     DROP TABLE public.prerequisito;
+       public         postgres    false    6            µ            1259    42965 	   risultato    TABLE     |   CREATE TABLE risultato (
+    id bigint NOT NULL,
+    valore character varying(255),
+    nome_nome character varying(255)
+);
+    DROP TABLE public.risultato;
+       public         postgres    false    6            ∂            1259    42973    tipologiaesame    TABLE     ≤   CREATE TABLE tipologiaesame (
+    nometipologia character varying(255) NOT NULL,
+    costotipologia double precision NOT NULL,
+    descrizione character varying(255) NOT NULL
+);
+ "   DROP TABLE public.tipologiaesame;
+       public         postgres    false    6            ∑            1259    42981    tipologiaesame_indicatore    TABLE     ê   CREATE TABLE tipologiaesame_indicatore (
+    tipologiaesame_nometipologia character varying(255),
+    indicatori_nome character varying(255)
+);
+ -   DROP TABLE public.tipologiaesame_indicatore;
+       public         postgres    false    6            ∏            1259    42987    tipologiaesame_prerequisito    TABLE     î   CREATE TABLE tipologiaesame_prerequisito (
+    tipologiaesame_nometipologia character varying(255),
+    prerequisiti_nome character varying(255)
+);
+ /   DROP TABLE public.tipologiaesame_prerequisito;
+       public         postgres    false    6                      0    42915    amministratore 
+   TABLE DATA               Z   COPY amministratore (id, cognome, email, indirizzo, nome, password, username) FROM stdin;
+    public       postgres    false    173   o5                 0    42923    esame 
+   TABLE DATA               o   COPY esame (id, datacreazione, dataesame, medico_id, paziente_idpaziente, tipologia_nometipologia) FROM stdin;
+    public       postgres    false    174   ¶5                 0    42928    esame_risultato 
+   TABLE DATA               :   COPY esame_risultato (esame_id, risultati_id) FROM stdin;
+    public       postgres    false    175   +6                 0    42931 
+   indicatore 
+   TABLE DATA               #   COPY indicatore (nome) FROM stdin;
+    public       postgres    false    176   H6                 0    42936    medico 
+   TABLE DATA               >   COPY medico (id, cognome, nome, specializzazione) FROM stdin;
+    public       postgres    false    177   Œ6                 0    42944    openjpa_sequence_table 
+   TABLE DATA               =   COPY openjpa_sequence_table (id, sequence_value) FROM stdin;
+    public       postgres    false    178   D7                 0    42949    paziente 
+   TABLE DATA               A   COPY paziente (idpaziente, cognome, indirizzo, nome) FROM stdin;
+    public       postgres    false    179   g7                 0    42957    prerequisito 
+   TABLE DATA               -   COPY prerequisito (nome, valore) FROM stdin;
+    public       postgres    false    180   æ7                 0    42965 	   risultato 
+   TABLE DATA               3   COPY risultato (id, valore, nome_nome) FROM stdin;
+    public       postgres    false    181   49                 0    42973    tipologiaesame 
+   TABLE DATA               M   COPY tipologiaesame (nometipologia, costotipologia, descrizione) FROM stdin;
+    public       postgres    false    182   Q9                 0    42981    tipologiaesame_indicatore 
+   TABLE DATA               [   COPY tipologiaesame_indicatore (tipologiaesame_nometipologia, indicatori_nome) FROM stdin;
+    public       postgres    false    183   9:                 0    42987    tipologiaesame_prerequisito 
+   TABLE DATA               _   COPY tipologiaesame_prerequisito (tipologiaesame_nometipologia, prerequisiti_nome) FROM stdin;
+    public       postgres    false    184   –:       å           2606    42922    amministratore_pkey 
+   CONSTRAINT     Y   ALTER TABLE ONLY amministratore
+    ADD CONSTRAINT amministratore_pkey PRIMARY KEY (id);
+ L   ALTER TABLE ONLY public.amministratore DROP CONSTRAINT amministratore_pkey;
+       public         postgres    false    173    173            é           2606    42927 
+   esame_pkey 
+   CONSTRAINT     G   ALTER TABLE ONLY esame
+    ADD CONSTRAINT esame_pkey PRIMARY KEY (id);
+ :   ALTER TABLE ONLY public.esame DROP CONSTRAINT esame_pkey;
+       public         postgres    false    174    174            ï           2606    42935    indicatore_pkey 
+   CONSTRAINT     S   ALTER TABLE ONLY indicatore
+    ADD CONSTRAINT indicatore_pkey PRIMARY KEY (nome);
+ D   ALTER TABLE ONLY public.indicatore DROP CONSTRAINT indicatore_pkey;
+       public         postgres    false    176    176            ó           2606    42943    medico_pkey 
+   CONSTRAINT     I   ALTER TABLE ONLY medico
+    ADD CONSTRAINT medico_pkey PRIMARY KEY (id);
+ <   ALTER TABLE ONLY public.medico DROP CONSTRAINT medico_pkey;
+       public         postgres    false    177    177            ô           2606    42948    openjpa_sequence_table_pkey 
+   CONSTRAINT     i   ALTER TABLE ONLY openjpa_sequence_table
+    ADD CONSTRAINT openjpa_sequence_table_pkey PRIMARY KEY (id);
+ \   ALTER TABLE ONLY public.openjpa_sequence_table DROP CONSTRAINT openjpa_sequence_table_pkey;
+       public         postgres    false    178    178            õ           2606    42956    paziente_pkey 
+   CONSTRAINT     U   ALTER TABLE ONLY paziente
+    ADD CONSTRAINT paziente_pkey PRIMARY KEY (idpaziente);
+ @   ALTER TABLE ONLY public.paziente DROP CONSTRAINT paziente_pkey;
+       public         postgres    false    179    179            ù           2606    42964    prerequisito_pkey 
+   CONSTRAINT     W   ALTER TABLE ONLY prerequisito
+    ADD CONSTRAINT prerequisito_pkey PRIMARY KEY (nome);
+ H   ALTER TABLE ONLY public.prerequisito DROP CONSTRAINT prerequisito_pkey;
+       public         postgres    false    180    180            †           2606    42972    risultato_pkey 
+   CONSTRAINT     O   ALTER TABLE ONLY risultato
+    ADD CONSTRAINT risultato_pkey PRIMARY KEY (id);
+ B   ALTER TABLE ONLY public.risultato DROP CONSTRAINT risultato_pkey;
+       public         postgres    false    181    181            ¢           2606    42980    tipologiaesame_pkey 
+   CONSTRAINT     d   ALTER TABLE ONLY tipologiaesame
+    ADD CONSTRAINT tipologiaesame_pkey PRIMARY KEY (nometipologia);
+ L   ALTER TABLE ONLY public.tipologiaesame DROP CONSTRAINT tipologiaesame_pkey;
+       public         postgres    false    182    182            è           1259    42993    i_esame_medico    INDEX     >   CREATE INDEX i_esame_medico ON esame USING btree (medico_id);
+ "   DROP INDEX public.i_esame_medico;
+       public         postgres    false    174            ê           1259    42994    i_esame_paziente    INDEX     J   CREATE INDEX i_esame_paziente ON esame USING btree (paziente_idpaziente);
+ $   DROP INDEX public.i_esame_paziente;
+       public         postgres    false    174            ë           1259    42995    i_esame_tipologia    INDEX     O   CREATE INDEX i_esame_tipologia ON esame USING btree (tipologia_nometipologia);
+ %   DROP INDEX public.i_esame_tipologia;
+       public         postgres    false    174            û           1259    42998    i_rsultto_nome    INDEX     B   CREATE INDEX i_rsultto_nome ON risultato USING btree (nome_nome);
+ "   DROP INDEX public.i_rsultto_nome;
+       public         postgres    false    181            í           1259    42996    i_sm_rltt_element    INDEX     N   CREATE INDEX i_sm_rltt_element ON esame_risultato USING btree (risultati_id);
+ %   DROP INDEX public.i_sm_rltt_element;
+       public         postgres    false    175            ì           1259    42997    i_sm_rltt_esame_id    INDEX     K   CREATE INDEX i_sm_rltt_esame_id ON esame_risultato USING btree (esame_id);
+ &   DROP INDEX public.i_sm_rltt_esame_id;
+       public         postgres    false    175            £           1259    42999    i_tplgctr_element    INDEX     [   CREATE INDEX i_tplgctr_element ON tipologiaesame_indicatore USING btree (indicatori_nome);
+ %   DROP INDEX public.i_tplgctr_element;
+       public         postgres    false    183            §           1259    43000 &   i_tplgctr_tipologiaesame_nometipologia    INDEX     }   CREATE INDEX i_tplgctr_tipologiaesame_nometipologia ON tipologiaesame_indicatore USING btree (tipologiaesame_nometipologia);
+ :   DROP INDEX public.i_tplgctr_tipologiaesame_nometipologia;
+       public         postgres    false    183            •           1259    43001    i_tplgqst_element    INDEX     _   CREATE INDEX i_tplgqst_element ON tipologiaesame_prerequisito USING btree (prerequisiti_nome);
+ %   DROP INDEX public.i_tplgqst_element;
+       public         postgres    false    184            ¶           1259    43002 &   i_tplgqst_tipologiaesame_nometipologia    INDEX        CREATE INDEX i_tplgqst_tipologiaesame_nometipologia ON tipologiaesame_prerequisito USING btree (tipologiaesame_nometipologia);
+ :   DROP INDEX public.i_tplgqst_tipologiaesame_nometipologia;
+       public         postgres    false    184               '   xú3¥¥4Ê,»/.I/J-Ü3ä3Àı2K0%0\1z\\\ ù'         u   xúeÃ1
+1F·zrä\`¬¸ìÕj“[€YŸQ$∞ÀB6ﬁ_Ax’W<H3ÀÃòº¢Ë°h¿ÙıÃ¢^§|¢IÈ“ˆ6ÃüÎsi˚h’Dˇ7)ç˘ÌGÜ2“œF	tZÓcÙ≠ZøµÌ—m]Õ]ÉsÓO…"            xúã—„‚‚ ≈ ©         v   xúUå±√0{N°	2ëÖb§høA—˚G™Çtè√UEcyJ˘XEÈ6”ÇŒ‚Õˇxl´âWïfLÏ§OÂyª%˜”ùÔmuîîA_π√Ê¬À~´Pu,„¶aq2´CVº;‘rºD‰ "Ah         f   xúÃ=
+Ä0@·99EO ®Ù ¢£¢ 8πƒV$P©’Û˚3>¯x6áÅnÜJí ®)z÷†°-`bq¸âFÖ“+∫’≥c!„ø4„°1°-°Â˝_ÌK$Ë›¯LÑsÜàFr"_            xú3‡445‰ä—„‚‚ 
+)É         G   xú3‰ÙÀLŒOIÕÕÁÀLT œMT0‰…¨ LÃÀÁ2‚
+d&ÇÂBJãìÛsÛL9}3ì3RsπbÙ∏∏∏ Áœ         f  xú}R;Vƒ0¨ìS®£„=8ç‚hçéÂıØ»i8W‡b»Nvó¿Bikf4#	S*~eÒéœÖgÆL>†÷—œÁÇ>s˛|}ÏX‚a-∆ºRƒÃ„Ãñãxz˛¶óﬂµ i‘:G—2ﬁÄM+âµî≥ñÁÇ†b‰çì3◊n·ƒâ+œßüUú•?¡‡IÖõ‡eaØ<nΩ(·“€h‡ 3˙á(&Òÿ•g™î5≤7™àç‡60¢Í˛.-HÃ®<GøMC&JÕÌ–°®ÌΩùN:ëÇ€ 7YÍn6†°ﬂ(á–ªÂR∑t≈tBT·æptvp vØX[ÁäN"wÅ+'G	°mO∑}õÙZéj¶Ÿ8÷a˜qM’Íò⁄ˆN	Ω-=ÿ~V<‹±◊S©Ü'Åâ™û(›.qõLî…in0hãÎ-Ëø∏;æ€0r„å/è„8~O-Y            xúã—„‚‚ ≈ ©         ÿ   xúuO;n√0ù•SpÎV∏C“:
+x B»åK@6Uä ê”‰.ΩXe’ê˘¯æ=g6Ñ˜P"g„Än◊π7ŒEäë``1S&ﬂˇ•¬A¶…–Ìˇ— 5 !)ÂÃ2ˇﬁ¬'ÀÊx@≠Ç(„ˇ‘un≈+B›lr!PŒI≤ ‘ìDﬁ|^á¿ˆ}Öè$j|Æ≈vÆ'Â”“∂%Ûç≥∏'º0ÕãW}°UI{ÂU8 ºnı/u©©ÑVvTú&tœwªNJ_ÖÊB£a@|Ùﬁˇ ∆íÅ±         á   xú}é±1cª
+W@/"§èHN˜«≥íÌ≥Œı–çaÅ@$ÔÃÓŒËpJ{ædtSö¥¥,NaÅ∫$Œøôf“;¥JRÊ3ÙÕNdCœ∫:HQ6-ö¯•}®›2L¯˝ñMÕq•p≥9õê£¢R‹é*7ÂÁ‘jT ◊üx‹ƒíeSS         ë   xúçé±1Ek2Ö'`â“U4&gNI|≤ÕÕ√.,Ü†°@‘~~ˇçlÏá|+lŒ7M†PsÑ,Õ—]“¯M¡ u)‰?Òub)2øµf™x%˝ ˚I±?Óp\Dù◊¶d∆qÅ3ö·ø0«¥ã&W…}yV¨µSQ≈kˇΩÑ,Úπ9µpü∂)•'X¨`√     
