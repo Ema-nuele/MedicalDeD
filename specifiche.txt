@@ -1,0 +1,111 @@
+PER ACCEDERE AL PANNELLO DI AMMINISTRAZIONE LE CREDENZIALI SONO: id: 1993 password: postgres
+
+
+Casi D'uso Implementati
+
+Caso d'uso relativo ad un utente non registrato:
+
+CASO D'USO UC1: CONSULTA OFFERTA
+
+Attore primario: utente non registrato
+
+Scenario principale di successo: 
+
+L'utente consulta l'elenco delle tipologie di esame
+L'utente sceglie una tipologia di esame e ne richiede i dettagli 
+Il sistema mostra i dettagli della tipologia di esame scelta dall'utente
+L'utente ripete i passi precedenti un numero indefinito di volte
+
+Casi d'uso relativi all'amministratore del sistema:
+
+
+CASO D'USO UC2: CREA ESAME (PRENOTAZIONE)
+
+Attore primario: amministrazione
+
+Scenario principale di successo: 
+
+L'ammistrazione crea un esame
+L'amministrazione imposta una tipologia di esame all'esame creato
+L'amministrazione associa un paziente all'esame creato
+Il sistema registra l'esame (impostando automaticamente la data di prenotazione)
+
+Precondizioni: l'amministratore è identificato e autenticato
+
+
+CASO D'USO UC4: INSERIMENTO TIPOLOGIA DI ESAME
+
+Attore primario: amministrazione
+
+Scenario principale:
+
+L'amministratore inserisce una nuova tipologia di esame specificandone i dettagli
+Il sistema registra la tipologia di esame
+I punti precedenti vengono ripetuti fino a che necessario
+
+Precondizioni: l'amministratore è identificato e autenticato
+
+
+CASO D'USO UC5: ESAMI EFFETTUATI DA UN MEDICO
+
+Attore primario: amministrazione
+
+Scenario principale:
+L’amministratore fornisce nome e cognome di un medico
+Il sistema mostra all’amministratore tutti gli esami effettuati dal medico
+
+Precondizioni: l’amministratore è identificato e autenticato
+
+Sono stati implementati inoltre dei casi d'uso inseriti da noi all'interno del pannello dell'amministrazione:
+
+
+CASO D'USO : LOGIN
+
+Attore primario: amministrazione
+
+Scenatio principale:
+
+L'amministratore inserisce le proprie credenziali di accesso
+Il sistema ne verifica l'autenticità e rimanda al pannello di amministrazione
+
+
+CASO D'USO: LOGOUT
+
+Attore primario: amministrazione
+
+Scenatio principale:
+
+L'amministratore effettua il logout dal pannello di amministrazione
+
+
+CASO D'USO: REGISTRAZIONE PAZIENTE IN ANAGRAFICA
+
+Attore primario: amministrazione
+
+Scenario principale:
+
+L'amministratore inseririsce i dati relativi ad un nuovo paziente
+Il sistema mostra un riepilogo dei dati e registra il paziente
+
+
+CASO D'USO: REGISTRAZIONE DI UN NUOVO AMMINISTRATORE
+
+Attore primario: amministrazione
+
+Scenario principale:
+
+L'aministratore registra all'interno del sistema un nuovo amministratore.
+Il sistema mostra un riepilogo dei dati inseriti e registra il nuovo amministratore.
+
+
+CASO D'USO: INSERIMENTO NUOVO MEDICO
+
+Attore primario:amministrazione
+
+Scenario principale:
+
+L'amministratore vuole registrare un nuovo medico.
+Inserisce i dati.
+Il sistema mostra un riepologo dei dati inseriti e registra il nuovo medico all'interno del sistema
+
+
